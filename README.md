@@ -12,7 +12,7 @@ Because Offline-js has some bugs and inconsistency
 
 # How
 
-´´´javascript
+```javascript
 var req = new Request();
 
 // default method is post
@@ -23,13 +23,13 @@ req.send('/', data)
 
 // or
 req.send({
-    method: 'post',
+    method: 'put',
     data: data,
     url: '/'
     })
 .then(function(res) {
     console.log(res)
 })    
-´´´
+```
 
 I´m working on it to remove the offline-js dependency
