@@ -5,9 +5,10 @@ Implementation of (https://github.com/hubspot/offline)[Offline-js] with some imp
 # Why?
 Because Offline-js has some bugs and inconsistency
 
+# Features
 * Promises support
 * Save ALL the failed requests, not just the last one
-* Send all failed requests when connection is up again
+* Send ALL failed requests when connection is up again
 * No need configuration
 
 # How
@@ -23,10 +24,10 @@ req.send('/', data)
 
 // or
 req.send({
-    method: 'put',
-    data: data,
-    url: '/'
-    })
+    method  : 'put',
+    data    : data,
+    url     : '/'
+})
 .then(function(res) {
     console.log(res)
 })    
