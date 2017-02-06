@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Offline Requests</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Offline-js -->
+    <link rel="stylesheet" href="http://github.hubspot.com/offline/themes/offline-theme-chrome.css">
+    <link rel="stylesheet" href="http://github.hubspot.com/offline/themes/offline-language-english.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h3>Handling Failed Requests</h3>
+            <form id="form1" class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-md-6">
+                        Name: <input type="text" name="name" value="" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" name="button" class="btn">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="handle-requests.min.js"></script>
+    <script type="text/javascript">
+        var req = new Request();
+        document.getElementById('form1').addEventListener('submit', function(e) {
+
+            e.preventDefault();
+
+            var inputs = [].slice.call(e.target.getElementsByTagName('input'));
+            var data = {};
+
+            inputs.forEach(function(input) {
+                data[input.name] = input.value
+            })
+
+            req.send('/', data)
+                .then(function(res) {
+                    console.log(res)
+                })
+
+        })
+    </script>
+</body>
+
+</html>
