@@ -1,6 +1,6 @@
 # handle-failed-requests-js
 
-Implementation of (https://github.com/hubspot/offline)[Offline-js] with some improvements
+Implementation of [Offline-js](https://github.com/hubspot/offline) with some improvements
 
 # Why?
 Because Offline-js has some bugs and inconsistency
