@@ -6,7 +6,7 @@ Implementation of [Offline-js](https://github.com/hubspot/offline) with some imp
 Because Offline-js has some bugs and inconsistency
 
 # Features
-* Promises support
+* Promises support (axios)
 * localStorage support
 * Save ALL the failed requests, not just the last one
 * Requests keep saved even if user try to refresh the page when offline
@@ -34,5 +34,6 @@ req.send({
     console.log(res)
 })    
 ```
+Look at [Axios](https://github.com/mzabriskie/axios) for requests options
 
 I´m working on it to remove the offline-js dependency
