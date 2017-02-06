@@ -12,7 +12,7 @@ Because Offline-js has some bugs and inconsistency
 
 # How
 
-´´´js
+´´´javascript
 var req = new Request();
 
 // default method is post
