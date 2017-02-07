@@ -1,25 +1,19 @@
 {
-  "name": "webpack-library-starter",
-  "version": "0.2.1",
-  "description": "Produce universal library with webpack and es6",
+  "name": "handle-failed-requests-js",
+  "version": "1.0.0",
+  "description": "Implementation of Offline-js with some improvements",
   "main": "lib/library.js",
   "scripts": {
     "build": "webpack --mode=build",
-    "dev": "webpack --progress --colors --watch --mode=dev",
-    "test": "mocha --compilers js:babel-core/register --colors ./test/*.spec.js",
-    "test:watch": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js"
+    "dev": "webpack --progress --colors --watch --mode=dev"
   },
   "devDependencies": {
     "babel": "6.3.13",
     "babel-core": "6.1.18",
-    "babel-eslint": "5.0.0",
     "babel-loader": "6.1.0",
     "babel-plugin-add-module-exports": "0.1.2",
     "babel-preset-es2015": "6.3.13",
     "chai": "3.4.1",
-    "eslint": "1.7.2",
-    "eslint-loader": "1.1.0",
-    "mocha": "2.3.4",
     "webpack": "1.12.9",
     "yargs": "3.32.0"
   },
@@ -28,20 +22,19 @@
     "url": "https://github.com/krasimir/webpack-library-starter.git"
   },
   "keywords": [
-    "webpack",
+    "offline",
     "es6",
     "starter",
     "library",
-    "universal",
+    "requests",
     "umd",
     "commonjs"
   ],
-  "author": "Krasimir Tsonev",
-  "license": "MIT",
+  "author": "Junior Oliveira",
   "bugs": {
-    "url": "https://github.com/krasimir/webpack-library-starter/issues"
+    "url": "https://github.com/arojunior/handle-failed-requests-js/issues"
   },
-  "homepage": "https://github.com/krasimir/webpack-library-starter",
+  "homepage": "https://github.com/arojunior/handle-failed-requests-js",
   "dependencies": {
     "axios": "^0.15.3",
     "offline-js": "^0.7.18"

@@ -61,7 +61,7 @@ class Request {
         localStorage.setItem("eRequests", JSON.stringify(this.eRequests))
     }
 
-    send(request, data) {
+    send(request, data = null) {
 
         if (typeof request !== 'object') {
             request = {
