@@ -15,6 +15,25 @@ Because Offline-js has some bugs and inconsistency
 
 # How
 
+* Node / npm
+
+```shell
+npm install --save handle-failed-requests-js
+```
+
+```javascript
+import Request from 'handle-failed-requests-js'
+
+Request.send({
+    method  : 'put',
+    data    : data,
+    url     : '/'
+})
+.then((res) => {
+    console.log(res)
+})
+```
+
 [example.html](https://github.com/arojunior/handle-failed-requests-js/blob/master/example.html)
 ```html
 <script src="handle-requests.min.js"></script>
@@ -37,25 +56,6 @@ req.send({
 .then(function(res) {
     console.log(res)
 })    
-```
-
-* Node / npm
-
-```shell
-npm install --save handle-failed-requests-js
-```
-
-```javascript
-import Request from 'handle-failed-requests-js'
-
-Request.send({
-    method  : 'put',
-    data    : data,
-    url     : '/'
-})
-.then((res) => {
-    console.log(res)
-})
 ```
 
 Look at [Axios](https://github.com/mzabriskie/axios) for requests options
