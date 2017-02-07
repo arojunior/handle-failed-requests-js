@@ -15,6 +15,10 @@ Because Offline-js has some bugs and inconsistency
 
 # How
 
+[example.html](https://github.com/arojunior/handle-failed-requests-js/blob/master/example.html)
+```html
+<script src="handle-requests.min.js"></script>
+```
 ```javascript
 var req = new Request();
 
@@ -34,6 +38,24 @@ req.send({
     console.log(res)
 })    
 ```
-Look at [Axios](https://github.com/mzabriskie/axios) for requests options
 
-I´m working on it to remove the offline-js dependency
+* Node / npm
+
+```shell
+npm install --save handle-failed-requests-js
+```
+
+```javascript
+import Request from 'handle-failed-requests-js'
+
+Request.send({
+    method  : 'put',
+    data    : data,
+    url     : '/'
+})
+.then((res) => {
+    console.log(res)
+})
+```
+
+Look at [Axios](https://github.com/mzabriskie/axios) for requests options
