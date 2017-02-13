@@ -60,4 +60,4 @@ req.send({
 
 Look at [Axios](https://github.com/mzabriskie/axios) for requests options
 
-[Artigo em português](https://medium.com/@arojunior/enviando-requisi%C3%A7%C3%B5es-sem-se-preocupar-com-o-status-da-conex%C3%A3o-2c8aca05457#.e884os9ty)
+[Artigo em português](https://medium.com/@arojunior/enviando-requisi%C3%A7%C3%B5es-sem-se-preocupar-com-o-status-da-conex%C3%A3o-2c8aca05457)
