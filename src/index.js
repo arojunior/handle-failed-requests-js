@@ -2,10 +2,11 @@ import 'offline-js/offline.min'
 import axios from 'axios'
 
 class Request {
+    
     constructor() {
         Offline.options = {
-            interceptRequests: false,
-            requests: false
+            interceptRequests   : false,
+            requests            : false
         }
 
         Offline.on('up', () => {
@@ -59,6 +60,10 @@ class Request {
 
     updateFailedRequests() {
         localStorage.setItem("eRequests", JSON.stringify(this.eRequests))
+    }
+
+    removeFailedRequests() {
+       localStorage.removeItem('eRequests')
     }
 
     send(request, data = null) {
