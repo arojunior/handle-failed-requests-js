@@ -2,7 +2,7 @@
   "name": "handle-failed-requests-js",
   "version": "1.0.2",
   "description": "Implementation of Offline-js with some improvements",
-  "main": "lib/library.js",
+  "main": "lib/handle-requests.min.js",
   "scripts": {
     "build": "webpack --mode=build",
     "dev": "webpack --progress --colors --watch --mode=dev"
