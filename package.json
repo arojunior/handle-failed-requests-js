@@ -1,6 +1,6 @@
 {
   "name": "handle-failed-requests-js",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Implementation of Offline-js with some improvements",
   "main": "lib/handle-requests.min.js",
   "scripts": {

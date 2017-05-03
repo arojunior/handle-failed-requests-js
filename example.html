@@ -30,27 +30,24 @@
             </form>
         </div>
     </div>
-    <script src="handle-requests.min.js"></script>
-    <script type="text/javascript">
-        var req = new Request();
-        document.getElementById('form1').addEventListener('submit', function(e) {
+<script src="handle-requests.min.js"></script>
+<script type="text/javascript">
+var req = new Request()
+document.getElementById('form1').addEventListener('submit', function(e) {
+  e.preventDefault()
 
-            e.preventDefault();
+  var inputs = [].slice.call(e.target.getElementsByTagName('input'))
+  var data = {}
 
-            var inputs = [].slice.call(e.target.getElementsByTagName('input'));
-            var data = {};
+  inputs.forEach(function(input) {
+    data[input.name] = input.value
+  })
 
-            inputs.forEach(function(input) {
-                data[input.name] = input.value
-            })
-
-            req.send('/', data)
-                .then(function(res) {
-                    console.log(res)
-                })
-
-        })
-    </script>
+  req.send('/', data).then(function(res) {
+    console.log(res)
+  })
+})
+</script>
 </body>
 
 </html>
