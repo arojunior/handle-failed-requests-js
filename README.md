@@ -5,15 +5,19 @@
 Implementation of [Offline-js](https://github.com/hubspot/offline) with some improvements
 
 # Why?
+
 Because Offline-js has some bugs and inconsistencies
 
 # Features
+
 * Promises support (axios)
 * localStorage support
 * Save ALL the failed requests, not just the last one
 * Requests keep saved even if user try to refresh the page when offline
 * Send ALL failed requests when connection is up again
 * No need configuration
+
+![Alt text](https://user-images.githubusercontent.com/7604033/39336674-19212d44-498f-11e8-9239-5bdc0710be2f.gif 'Example')
 
 # How
 
@@ -24,17 +28,17 @@ npm install --save handle-failed-requests-js
 ```
 
 ```javascript
-import Request from 'handle-failed-requests-js'
+import Request from 'handle-failed-requests-js';
 
 Request.send({
   method: 'put',
   data: data,
   url: '/'
 }).then(res => {
-  console.log(res)
-})
-
+  console.log(res);
+});
 ```
+
 [example.html](https://github.com/arojunior/handle-failed-requests-js/blob/master/example.html)
 
 ```html
@@ -46,8 +50,8 @@ var req = new Request();
 
 // default method is post
 req.send('/', data).then(function(res) {
-  console.log(res)
-})
+  console.log(res);
+});
 
 // or
 req
@@ -57,8 +61,8 @@ req
     url: '/'
   })
   .then(function(res) {
-    console.log(res)
-  })  
+    console.log(res);
+  });
 ```
 
 See [Axios](https://github.com/mzabriskie/axios) documentation for requests options
