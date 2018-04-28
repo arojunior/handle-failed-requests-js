@@ -1,6 +1,6 @@
 {
   "name": "handle-failed-requests-js",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Implementation of Offline-js with some improvements",
   "main": "lib/handle-requests.min.js",
   "scripts": {
@@ -13,7 +13,6 @@
     "babel-loader": "6.1.0",
     "babel-plugin-add-module-exports": "0.1.2",
     "babel-preset-es2015": "6.3.13",
-    "chai": "3.4.1",
     "webpack": "1.12.9",
     "yargs": "3.32.0"
   },

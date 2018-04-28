@@ -1,70 +1,71 @@
-import 'offline-js/offline.min'
-import axios from 'axios'
+import 'offline-js/offline.min';
+import axios from 'axios';
 
 class Request {
   constructor() {
     Offline.options = {
       interceptRequests: false,
       requests: false
-    }
+    };
 
     Offline.on('up', () => {
-      this.checkPendingRequests()
-    })
+      this.checkInterval = setInterval(() => this.checkPendingRequests(), 1000);
+    });
 
-    this.checkPendingRequests()
+    this.checkPendingRequests();
 
-    this.eRequests = []
+    this.eRequests = [];
   }
 
   checkPendingRequests() {
-    const eRequests = localStorage.getItem('eRequests')
+    const eRequests = localStorage.getItem('eRequests');
 
     if (eRequests !== null && eRequests !== 'undefined') {
-      this.eRequests = JSON.parse(eRequests)
+      this.eRequests = JSON.parse(eRequests);
 
-      return this.sendPendingRequests()
+      return this.sendPendingRequests();
     }
 
-    return false
+    return false;
   }
 
   sendPendingRequests() {
-    let requests = this.eRequests
-    let sendRequest = item => axios(item)
+    let requests = this.eRequests;
+    let sendRequest = item => axios(item);
 
     if (requests.length === 0) {
-      return false
+      clearInterval(this.checkInterval);
+      return false;
     }
 
     axios
       .all(
         requests.map(item => {
-          requests.splice(requests.indexOf(item), 1)
-          return sendRequest(item)
+          requests.splice(requests.indexOf(item), 1);
+          return sendRequest(item);
         })
       )
       .then(() => {
-        this.eRequests = requests
-        this.updateFailedRequests()
+        this.eRequests = requests;
+        this.updateFailedRequests();
       })
-      .catch(() => false)
+      .catch(() => false);
 
-    return true
+    return true;
   }
 
   queueFailedRequests(requestData) {
-    this.eRequests.push(requestData)
+    this.eRequests.push(requestData);
 
-    this.updateFailedRequests()
+    this.updateFailedRequests();
   }
 
   updateFailedRequests() {
-    localStorage.setItem('eRequests', JSON.stringify(this.eRequests))
+    localStorage.setItem('eRequests', JSON.stringify(this.eRequests));
   }
 
   removeFailedRequests() {
-    localStorage.removeItem('eRequests')
+    localStorage.removeItem('eRequests');
   }
 
   send(request, data = null) {
@@ -73,11 +74,11 @@ class Request {
         method: 'post',
         url: request,
         data: data
-      }
+      };
     }
 
-    return axios(request).catch(() => this.queueFailedRequests(request))
+    return axios(request).catch(() => this.queueFailedRequests(request));
   }
 }
 
-export default Request
+export default Request;
