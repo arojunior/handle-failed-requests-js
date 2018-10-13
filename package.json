@@ -2,6 +2,7 @@
   "name": "handle-failed-requests-js",
   "version": "1.0.5",
   "description": "Implementation of Offline-js with some improvements",
+  "license": "MIT",
   "main": "lib/handle-requests.min.js",
   "scripts": {
     "build": "webpack --mode=build",
