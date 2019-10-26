@@ -60,8 +60,17 @@ class Request {
     this.updateFailedRequests();
   }
 
-  updateFailedRequests() {
-    localStorage.setItem('eRequests', JSON.stringify(this.eRequests));
+  getFailedRequests() {
+    return this.eRequests.map(item => {
+      if (item instanceof FormData) {
+        return Object.fromEntries(item);
+      }
+      return item;
+    });    
+  }
+  
+  updateFailedRequests() {  
+    localStorage.setItem('eRequests', JSON.stringify(this.getFailedRequests()));
   }
 
   removeFailedRequests() {
